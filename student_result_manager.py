@@ -26,4 +26,17 @@ while True:
                 print(name, ":", marks)
 
 
+    #Check Result
+    elif choice == "3":
+        name = input("Enter Student Name: ")
+
+        if name in student:
+            marks = student[name]
+            if marks >=40:
+                print("PASS")
+            else:
+                print("FAIL")
+        else:
+            print("Student Not Found!")
+
     
