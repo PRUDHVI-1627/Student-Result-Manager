@@ -12,7 +12,7 @@ while True:
     #Add Students
     if choice =="1":
         name = input("Enter Student Name:")
-        marks = marks(input("Enter marks:"))
+        marks = int(input("Enter marks:"))
         student[name] = marks
         print(f"{name} Successfully Added!")
 
