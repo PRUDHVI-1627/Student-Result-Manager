@@ -39,4 +39,9 @@ while True:
         else:
             print("Student Not Found!")
 
-    
+    #Exit
+    elif choice == "4":
+        print("Exiting...")
+        break
+    else:
+        print("In-valid Input")
