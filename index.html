@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="header">
+      <h1>Student Manager</h1>
+      <span>v1.0</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('add')">Add</button>
+      <button class="tab" onclick="switchTab('view')">View</button>
+      <button class="tab" onclick="switchTab('result')">Result</button>
+    </div>
+
+    <!-- Add Student -->
+    <div id="tab-add" class="panel active">
+      <label for="inp-name">Student name</label>
+      <input type="text" id="inp-name" placeholder="e.g. Priya Sharma" />
+      <label for="inp-marks">Marks (0 – 100)</label>
+      <input type="number" id="inp-marks" placeholder="e.g. 74" min="0" max="100" />
+      <button class="btn" onclick="addStudent()">Add student</button>
+      <div class="toast" id="add-toast"></div>
+    </div>
+
+    <!-- View Students -->
+    <div id="tab-view" class="panel">
+      <div class="count-bar">
+        <span class="dot"></span>
+        <span id="count-label">0 students enrolled</span>
+      </div>
+      <ul class="student-list" id="student-list">
+        <li class="empty" id="empty-msg">No students added yet.</li>
+      </ul>
+    </div>
+
+    <!-- Check Result -->
+    <div id="tab-result" class="panel">
+      <label for="inp-search">Student name</label>
+      <input type="text" id="inp-search" placeholder="Enter exact name..." />
+      <button class="btn" onclick="checkResult()">Check result</button>
+      <div class="result-box" id="result-box">
+        <div class="result-name" id="result-name"></div>
+        <div class="result-verdict" id="result-verdict"></div>
+        <div class="result-marks" id="result-marks"></div>
+      </div>
+      <div class="toast" id="result-toast"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
